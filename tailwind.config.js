@@ -12,7 +12,7 @@ export default {
         primarySubcontent: '#EFB758',
         primaryBase: '#EFB758',
         primaryAccent: '#183A5A',
-        primaryBg: '#E2DBC9',
+        primaryBg: '#f6f6f6',
       },
     },
   },
