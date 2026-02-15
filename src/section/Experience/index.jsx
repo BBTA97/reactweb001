@@ -3,6 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import picExp from '../../assets/Book1.png'
 import picExp2 from '../../assets/Book2.png'
 import { useState } from "react";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import FormattedDate from "../../components/FomattedDate";
+import Picture from "../../components/Picture";
+import TitleLink from "../../components/TitleLink";
+import Material from "../../components/Material";
+import Description from "../../components/Description";
+import Tech from "../../components/Tech";
+
+
 const Experience = () => {
     const [isMouseEnter, setIsMouseEnter] = useState(false);
 
@@ -14,53 +23,22 @@ const Experience = () => {
                 onMouseLeave={() => setIsMouseEnter({ 'exp1': false })}
             >
                 <div>
-                    <span className={`text-sm ${isMouseEnter['exp1'] ? "text-primaryAccent" : ""}`}>
-                        2024-2026
-                    </span>
-                    <div>
-                        <img src={picExp} className="w-5/6 rounded-md border-2 border-primarySubcontent" />
-                    </div>
+                    <FormattedDate isHighlight={isMouseEnter['exp1']}>2024-2026</FormattedDate>
+                    <Picture picture={picExp} title="Fullstack" />
                 </div>
                 <div className="grid gap-y-4">
-                    <div className={`text-primaryAccent ${isMouseEnter['exp1'] ? "text-primaryAccent" : ""}`}>Fullstack</div>
-                    <div className="flex gap-4 text-xl">
-                        <FontAwesomeIcon icon={faGithub} />
-                        <FontAwesomeIcon icon={faYoutube} />
+                    <TitleLink isHighlight={isMouseEnter['exp1']} title="Fullstack" link="https://github.com/BBTA97/reactweb001" />
+                    <div className="flex gap-4 text-xl" >
+                        <Material icon={faGithub} link="https://github.com/BBTA97/reactweb001" />
+                        <Material icon={faYoutube} link="https://github.com/BBTA97/reactweb001" />
                     </div>
-                    <div className="text-sm">Designing and developing a sports data analysis system that scrapes data from various sports websites, processes it, and presents different profit-making possibilities in real-time for customers.</div>
-                    <div className="flex gap-4 text-sm">
-                        <div className={`rounded-md bg-primarySubcontent px-4 py-1 ${isMouseEnter ['exp1'] ? "text-primaryAccent" : ""}`}>React</div>
-                        <div className={`rounded-md bg-primarySubcontent px-4 py-1 ${isMouseEnter ['exp1'] ? "text-primaryAccent" : ""}`}>Next</div>
+                    <Description description="Designing and developing a sports data analysis system that scrapes data from various sports websites, processes it, and presents different profit-making possibilities in real-time for customers." />
+                    
+                    <div >
+                       <Tech isHighlight={isMouseEnter['exp1']} data={['React', 'Next']} />
                     </div>
                 </div>
             </div>
-
-            <div className={`grid grid-cols-[25%_75%]  rounded px-2 py-6 transition-all ${isMouseEnter ['exp2'] ? "bg-gray-200" : ""}`}
-                onMouseEnter={() => setIsMouseEnter({ 'exp2': true })}
-                onMouseLeave={() => setIsMouseEnter({ 'exp2': false })}
-            >
-                <div>
-                    <span className={`text-sm ${isMouseEnter ['exp2'] ? "text-primaryAccent" : ""}`}>
-                        2022-2024
-                    </span>
-                    <div>
-                        <img src={picExp2} className="w-5/6 rounded-md border-2 border-primarySubcontent" />
-                    </div>
-                </div>
-                <div className="grid gap-y-4">
-                    <div className={`text-primaryAccent ${isMouseEnter['exp2'] ? "text-primaryAccent" : ""}`}>Fullstack</div>
-                    <div className="flex gap-4 text-xl">
-                        <FontAwesomeIcon icon={faGithub} />
-                        <FontAwesomeIcon icon={faYoutube} />
-                    </div>
-                    <div className="text-sm">Description2</div>
-                    <div className="flex gap-4 text-sm">
-                        <div className={`rounded-md bg-primarySubcontent px-4 py-1 ${isMouseEnter ['exp2'] ? "text-primaryAccent" : ""}`}>React</div>
-                        <div className={`rounded-md bg-primarySubcontent px-4 py-1 ${isMouseEnter ['exp2'] ? "text-primaryAccent" : ""}`}>Next</div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     )
 }
