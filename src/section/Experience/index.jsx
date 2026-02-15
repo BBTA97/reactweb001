@@ -23,7 +23,7 @@ const Experience = () => {
                 onMouseLeave={() => setIsMouseEnter({ 'exp1': false })}
             >
                 <div>
-                    <FormattedDate isHighlight={isMouseEnter['exp1']}>2024-202</FormattedDate>
+                    <FormattedDate isHighlight={isMouseEnter['exp1']}>2024-2026</FormattedDate>
                     <Picture picture={picExp} title="Fullstack" />
                 </div>
                 <div className="grid gap-y-4">
